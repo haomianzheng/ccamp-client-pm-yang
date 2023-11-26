@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-11-23T00:58:36.168716+00:00",
+  "timestamp": "2023-11-26T01:02:27.452014+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -134,15 +134,15 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "[Editor's Copy ](https://github.com/haomianzheng/ccamp-client-pm-yang/files/12849330/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n[Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/diff?doc_1=draft-zheng-ccamp-client-pm-yang&url_2=https://github.com/haomianzheng/ccamp-client-pm-yang/files/12849330/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n",
+      "body": "[Editor's Copy ](https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n\r\n[Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/diff?doc_1=draft-zheng-ccamp-client-pm-yang&url_2=https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n",
       "createdAt": "2023-10-09T17:50:57Z",
-      "updatedAt": "2023-10-09T18:36:06Z",
+      "updatedAt": "2023-11-24T17:57:05Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "f671fd6a69cdb39b1a903fc24f34f02c9842d348",
       "headRepository": "italobusi/ccamp-client-pm-yang",
       "headRefName": "kramdown",
-      "headRefOid": "0d9654e013e47d4509ba4c66affe84ea06623cf5",
+      "headRefOid": "87582a3798e4b0f39f33a45a38e3717c5cb48634",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
