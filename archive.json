@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-11-26T01:02:27.452014+00:00",
+  "timestamp": "2023-11-28T00:59:51.659974+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -129,24 +129,26 @@
       "id": "PR_kwDOKd2bN85cSOFM",
       "title": "Move draft to kramdown",
       "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "[Editor's Copy ](https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n\r\n[Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/diff?doc_1=draft-zheng-ccamp-client-pm-yang&url_2=https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n",
       "createdAt": "2023-10-09T17:50:57Z",
-      "updatedAt": "2023-11-24T17:57:05Z",
+      "updatedAt": "2023-11-26T10:48:12Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "f671fd6a69cdb39b1a903fc24f34f02c9842d348",
       "headRepository": "italobusi/ccamp-client-pm-yang",
       "headRefName": "kramdown",
       "headRefOid": "87582a3798e4b0f39f33a45a38e3717c5cb48634",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-11-26T10:48:12Z",
+      "mergedAt": "2023-11-26T10:48:12Z",
+      "mergedBy": "YuChaode",
+      "mergeCommit": {
+        "oid": "7b00472e6e8ed0f94c64280b0b938f0e9de34e66"
+      },
       "comments": [],
       "reviews": [
         {
