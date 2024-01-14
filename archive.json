@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-11T01:00:34.450397+00:00",
+  "timestamp": "2024-01-14T01:04:50.259698+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -119,6 +119,22 @@
       "body": "Current Shape in the model: \r\n\r\n```\r\nleaf vlan-id {\r\n        type etht-types:vlanid;\r\n        description\r\n          \"The customer VLAN Identifier of the Ethernet Client to be monitored.\";\r\n}\r\n```\r\nThis would be needed when the performance monitoring is per vlan, instead of per service. The scenario is somehow overlapping with the traffic-class, so it may need to be coordinated with traffic-class as well. ",
       "createdAt": "2020-05-08T03:15:10Z",
       "updatedAt": "2023-10-09T11:36:38Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOKd2bN857xvLE",
+      "title": "Update reference to WDM Tunnel model",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/6",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Update the references to WDM tunnel model [draft-ietf-ccamp-wdm-tunnel-yang](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang)) which has replaced both WSON and Flexi-grid tunnel models\r\n",
+      "createdAt": "2024-01-11T13:19:29Z",
+      "updatedAt": "2024-01-11T13:19:29Z",
       "closedAt": null,
       "comments": []
     }
