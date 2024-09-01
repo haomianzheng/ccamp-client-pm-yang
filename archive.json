@@ -1,0 +1,239 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-09-01T01:20:14.548967+00:00",
+  "repo": "haomianzheng/ccamp-client-pm-yang",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "MDU6SXNzdWUxOTMyNTQ2NTc0",
+      "title": "PM: At which point service PM is measured?",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/1",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The current PM model allows configuring which PM parameter to monitor and to report the measured PM parameter. However, it is not clear at which point the measurement is required\r\n",
+      "createdAt": "2021-07-09T12:49:57Z",
+      "updatedAt": "2023-10-09T08:24:56Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "MDU6SXNzdWUxOTMyODY4OTcw",
+      "title": "PM: How the rate for packet traffic is measured?",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/2",
+      "state": "CLOSED",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The ingress/egress rate PM parameters have been defined. However, for packet traffic, more details is required to indicate how the packet rate is calculated (e.g., on which time window)\r\n",
+      "createdAt": "2021-07-09T12:49:00Z",
+      "updatedAt": "2024-08-30T09:06:19Z",
+      "closedAt": "2024-08-30T09:06:19Z",
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "MDU6SXNzdWUxOTMyODY5MzAy",
+      "title": "PM Model: Common types and Unit in identity description",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/3",
+      "state": "OPEN",
+      "author": "haomianzheng",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Current in the PM model (Ethernet)\r\n\r\n```\r\n identity bandwidth {\r\n    base performance-type;\r\n    description\r\n      \"Bandwidth measurement for performance monitoring. \";\r\n  }\r\n```\r\n\r\nThe following would be needed: \r\n1. Evaluate the applicability of such identities to transparent service as well; and extract to common pm-types if needed; \r\n2. Add in description, on how the parameter is measured. For example regarding the bandwidth, should we measure by kbps or Mbps or through IEEE floating point number? \r\n",
+      "createdAt": "2020-05-08T03:18:20Z",
+      "updatedAt": "2023-10-09T11:36:05Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "haomianzheng",
+          "authorAssociation": "OWNER",
+          "body": "Comments from Victor/Oscar: \r\n\r\nWe may have a common types for pm, and need to coordinate with teas-actn-pm-telemetry and bess-vpn-common-pm. ",
+          "createdAt": "2021-07-22T08:11:07Z",
+          "updatedAt": "2021-07-22T08:11:07Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "MDU6SXNzdWUxOTMyODcwMjIy",
+      "title": "PM model: the vlan-id or the traffic-class? ",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/4",
+      "state": "OPEN",
+      "author": "haomianzheng",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Current Shape in the model: \r\n\r\n```\r\nleaf vlan-id {\r\n        type etht-types:vlanid;\r\n        description\r\n          \"The customer VLAN Identifier of the Ethernet Client to be monitored.\";\r\n}\r\n```\r\nThis would be needed when the performance monitoring is per vlan, instead of per service. The scenario is somehow overlapping with the traffic-class, so it may need to be coordinated with traffic-class as well. ",
+      "createdAt": "2020-05-08T03:15:10Z",
+      "updatedAt": "2023-10-09T11:36:38Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDOKd2bN857xvLE",
+      "title": "Update reference to WDM Tunnel model",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/6",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Update the references to WDM tunnel model [draft-ietf-ccamp-wdm-tunnel-yang](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang)) which has replaced both WSON and Flexi-grid tunnel models\r\n",
+      "createdAt": "2024-01-11T13:19:29Z",
+      "updatedAt": "2024-01-11T13:19:29Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 5,
+      "id": "PR_kwDOKd2bN85cSOFM",
+      "title": "Move draft to kramdown",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/5",
+      "state": "MERGED",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "[Editor's Copy ](https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n\r\n[Compare Editor's Copy to Individual Draft](https://author-tools.ietf.org/diff?doc_1=draft-zheng-ccamp-client-pm-yang&url_2=https://github.com/haomianzheng/ccamp-client-pm-yang/files/13461466/draft-zheng-ccamp-client-pm-yang.txt)\r\n\r\n",
+      "createdAt": "2023-10-09T17:50:57Z",
+      "updatedAt": "2023-11-26T10:48:12Z",
+      "baseRepository": "haomianzheng/ccamp-client-pm-yang",
+      "baseRefName": "main",
+      "baseRefOid": "f671fd6a69cdb39b1a903fc24f34f02c9842d348",
+      "headRepository": "italobusi/ccamp-client-pm-yang",
+      "headRefName": "kramdown",
+      "headRefOid": "87582a3798e4b0f39f33a45a38e3717c5cb48634",
+      "closedAt": "2023-11-26T10:48:12Z",
+      "mergedAt": "2023-11-26T10:48:12Z",
+      "mergedBy": "YuChaode",
+      "mergeCommit": {
+        "oid": "7b00472e6e8ed0f94c64280b0b938f0e9de34e66"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKd2bN85jPw13",
+          "commit": {
+            "abbreviatedOid": "fe91eda"
+          },
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-09T18:31:09Z",
+          "updatedAt": "2023-10-09T18:31:09Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n* [Editor's Copy](https://haomianzheng.github.io/ccamp-client-pm-yang/#go.draft-zheng-ccamp-client-pm-yang.html)\r\n```",
+              "createdAt": "2023-10-09T18:31:09Z",
+              "updatedAt": "2023-10-09T18:31:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOKd2bN85jPw5z",
+          "commit": {
+            "abbreviatedOid": "fe91eda"
+          },
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-09T18:31:22Z",
+          "updatedAt": "2023-10-09T18:31:23Z",
+          "comments": [
+            {
+              "originalPosition": 9,
+              "body": "```suggestion\r\n* [Compare Editor's Copy to Individual Draft](https://haomianzheng.github.io/ccamp-client-pm-yang/#go.draft-zheng-ccamp-client-pm-yang.diff)\r\n```",
+              "createdAt": "2023-10-09T18:31:23Z",
+              "updatedAt": "2023-10-09T18:31:23Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOKd2bN85rRYoo",
+      "title": "Updates from IETF119",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/7",
+      "state": "OPEN",
+      "author": "YuChaode",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-04-01T03:12:36Z",
+      "updatedAt": "2024-04-01T03:12:37Z",
+      "baseRepository": "haomianzheng/ccamp-client-pm-yang",
+      "baseRefName": "main",
+      "baseRefOid": "7b00472e6e8ed0f94c64280b0b938f0e9de34e66",
+      "headRepository": "YuChaode/ccamp-client-pm-yang",
+      "headRefName": "main",
+      "headRefOid": "c6b6a70b6a092607861e255b712dd0a468cc4333",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
