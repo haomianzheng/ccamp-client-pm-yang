@@ -61,42 +61,21 @@ informative:
 
 --- abstract
 
-A transport network is a server-layer network to provide connectivity
-services to its client.  Given the client signal is configured, the
-followup function for performance monitoring, such as latency and bit
-error rate, would be needed for network operation.
+A transport network is a server-layer network to provide connectivity services to its client.  Given the client signal is configured, the followup function for performance monitoring, such as latency and bit error rate, would be needed for network operation.
 
-This document describes the data model to support the performance
-monitoring functionalities.
+This document describes the data model to support the performance monitoring functionalities.
 
 --- middle
 
 # Introduction
 
-Client-layer network and server-layer network have been respectively
-modeled to allow the tunnels carrying the client traffic.  Server-
-layers are modeled as tunnels with various switching technologies,
-such as OTN in {{?I-D.ietf-ccamp-otn-tunnel-model}} and WSON in
-{{?I-D.ietf-ccamp-wson-tunnel-model}}.  Client-layers are modeled as
-client signals according to the client-signal identities specified in
-{{!I-D.ietf-ccamp-layer1-types}}.  These client signals can be
-configured to existing tunnels via the client signal configuration
-model specified in {{!I-D.ietf-ccamp-client-signal-yang}}.
+Client-layer network and server-layer network have been respectively modeled to allow the tunnels carrying the client traffic.  Server-layers are modeled as tunnels with various switching technologies, such as OTN in {{?I-D.ietf-ccamp-otn-tunnel-model}} and WSON in {{?I-D.ietf-ccamp-wson-tunnel-model}}.  Client-layers are modeled as client signals according to the client-signal identities specified in {{!I-D.ietf-ccamp-layer1-types}}.  These client signals can be configured to existing tunnels via the client signal configuration model specified in {{!I-D.ietf-ccamp-client-signal-yang}}.
 
-In the network operation, the operator is interested in monitoring
-their instantiated client signal over tunnels.  The objective of such
-monitoring is to complete timely adjustment once there is abnormal
-statistic which may result in failure of the client signal.  The
-parameters specified in the performance monitoring model can be
-collected for the operation need.  The OAM mechanism, can be
-configured together with the performance monitoring model.
+In the network operation, the operator is interested in monitoring their instantiated client signal over tunnels.  The objective of such monitoring is to complete timely adjustment once there is abnormal statistic which may result in failure of the client signal.  The parameters specified in the performance monitoring model can be collected for the operation need.  The OAM mechanism, can be configured together with the performance monitoring model.
 
 # Terminology and Notations
 
-A simplified graphical representation of the data model is used in
-this document.  The meaning of the symbols in the YANG data tree
-presented later in this document is defined in {{?RFC8340}}.  They are
-provided below for reference.
+A simplified graphical representation of the data model is used in this document.  The meaning of the symbols in the YANG data tree presented later in this document is defined in {{?RFC8340}}.  They are provided below for reference.
 
 - Brackets "\[" and "]" enclose list keys.
 
@@ -114,58 +93,86 @@ provided below for reference.
 
 # Model Relationship
 
-{{!I-D.ietf-ccamp-client-signal-yang}} has specified the two models for
-the client signal configuration, module ietf-trans-client-service for
-transparent client service and module ietf-eth-tran-service for
-Ethernet service.  Basically the client signal types in this document
-is consistent with ietf-eth-tran-types, and focus on different
-functionality.  On the perspective of operator, the modules in
-{{!I-D.ietf-ccamp-client-signal-yang}} can be used to configure the
-service given any underlay tunnels, while the operation about
-monitoring the performance on given service can be achieved by using
-the model in this document.
+{{!I-D.ietf-ccamp-client-signal-yang}} has specified the two models for the client signal configuration, module ietf-trans-client-service for transparent client service and module ietf-eth-tran-service for Ethernet service.  Basically the client signal types in this document is consistent with ietf-eth-tran-types, and focus on different functionality.  On the perspective of operator, the modules in {{!I-D.ietf-ccamp-client-signal-yang}} can be used to configure the service given any underlay tunnels, while the operation about monitoring the performance on given service can be achieved by using the model in this document.
 
-Consideration on Key Performance Information (KPI) monitoring for
-Virtual Network (VN) and tunnels has been specified in
-{{!I-D.ietf-teas-actn-pm-telemetry-autonomics}}.  Usually the monitoring
-on the tunnels are the VNs should be separately deployed for the
-network operation, but it is possible to have common parameters that
-are both needed for the VN/TE and the configured services.  Common
-types are imported in both modules.
+Consideration on Key Performance Information (KPI) monitoring for Virtual Network (VN) and tunnels has been specified in {{!I-D.ietf-teas-actn-pm-telemetry-autonomics}}.  Usually the monitoring on the tunnels are the VNs should be separately deployed for the network operation, but it is possible to have common parameters that are both needed for the VN/TE and the configured services.  Common types are imported in both modules.
 
-VPN-level parameters and their monitoring have been defined in
-{{!I-D.www-bess-yang-vpn-service-pm}}.  This module focus on the
-performance on the topology at different layer or the overlay
-topology between VPN sites.  On the other hand, this document is
-focusing on the performance of the service configured between
-Customer Ends (CE).
+VPN-level parameters and their monitoring have been defined in {{!I-D.www-bess-yang-vpn-service-pm}}.  This module focus on the performance on the topology at different layer or the overlay topology between VPN sites.  On the other hand, this document is focusing on the performance of the service configured between Customer Ends (CE).
+
+{{!draft-yu-ccamp-optical-resource-pm-yang}} is aimed to provide a performance management approach on the resource level in a traditional way. This resource could refer to physical resource, such as board, port etc., or logical resource, e.g. TTP etc. The management object is different with this document. But there is some relationship between these two documents. The PM data of client signal can be collected on some specific resource. This collection mechanism should be in the scope of this document.
+
+# Use Cases of Performance Management of Client Signal
+
+## Automatic Service Acceptance Test
+
+After the private line service is provisioned on the network, usually it needs to take an acceptance test before it is deliver to the user. This acceptance test includes traffic test to make sure that it's reachable from the source access port to the destination access port. The engineers need to take tester onsite, especially when the private line service is an inter-domain service which the source and destination could be in different cities, the acceptance test would require a lot of human resource and time.
+
+It is excellent if this acceptance test can be operated automatically by interface instead of people. For example, we can test the latency of private line service to replace the connectivity test by human. The session of 15.8.2.1.6 in ITU-T G.709 defines the mechanism of delay (latency) measurement mechanism of ODU path. If the latency value could be returned successfully through the ODU path, then there will not be interruption on the ODU path.
+
+## Private Line Service SLA Assurance
+
+SLA (Service Level Agreement) is an agreement aligned by the service provider and the user. This agreement defines service type, quality of service etc. which the service provider guarantees to the user.
+
+Transport private line service has got the advantage of hard isolation, large bandwidth, low latency and high reliability. So usually it is more expensive than the other fixed broadband services. From the user's perspective, they also have some particular demand for the private line service. For example, some industry customers, e.g. stock and futures industry customers who have a lot of high-frequency trading requirement, have extremely high requirements on latency. The customer from government and security assurance department have extremely high requirements on service reliability. The Private line service users expect to monitor service performance indicators to ensure that their private line services are cost-effective and meet SLA requirements.
+
+And for the service provider, continuous monitoring of key service performance and proactive O&M can reduce customer complaints and ensure SLA delivery. The performance data can even be used for precision marketing. For example, if the bandwidth usage of a user's private line is too high for a long time, the system can remind the user to adjust the bandwidth in a timely manner.
+
+~~~~ ascii-art
+ +----------+   +----------+
+ | Operator |   |   User   |
+ +----------+   +----------+
+      ||             ||
+ +----------+   +----------+
+ |   OSS    |   |   APP    |
+ +----------+   +----------+
+      ||             ||
+  +-----------------------+
+  |  domain Controller    |
+  +-----------------------+
+            ||
+      --------------
+     /    Network   \
+     \______________/
+
+~~~~
+
+{: #fig-sla-assurance title="Architecture of Private Line SLA Assurance"}
 
 # Consideration on Monitoring Parameters
 
-There can be multiple groups of parameters for monitoring, such as
-latency, bit error rate (BER).  Some of these parameters are layer-
-dependent, for example, packet loss is only applicable in packet
-networks are won't be neede for layer 1 OTN and layer 0 WSON.
+For the mechanism of performance monitoring, there have been a lot of discussion in ITU-T G.709, G.874, G.875, G.7710, G.7718, and G.7719. This document would rather reference the definition of ITU-T than restarting new discussion. But for the service level's performance parameter, there is not enough definition in ITU-T and IETF, this document will focus on how to define a service level performance parameter. Considering there could be a lot of new service performance parameters, it is also suggested to define a generic data model to conduct the service performance parameters.
 
-This document starts with the specification of the latency
-measurement for both Ethernet service and client signal service.  In
-the future version additional parameters would be added into the data
-model in the same approach as the latency in the current version.  A
-candidate list of parameters to be monitored include: Latency, Packet
-Loss, Bit Error Rate (BER), Jitter, Bandwidth, Byte/Packet number and
-so on.
+## Service Latency Measurement
+
+According to the description of session 15.8.2.1.6 in ITU-T g.709, PM overhead can be used to measure the delay (latency) of ODU path. Simply speaking, in the latency measurement process, the PM overhead is generated and delivered on the source port and looped back at the sink port. By observing the 0-1 change of PM overhead on the source port, it is able to obtain latency data of E2E ODU path.
+
+For intra-domain services, the domain controller can differentiate who is the source port and who is the sink port， and orchestrate the whole measurement  process. But for inter-domain service, it is hard for the domain controller to know the access port in its domain is a source or sink port. Therefore an orchestrator above is needed to do this orchestration. The orchestrator specify one of the domain's access port performs as the sink port and the other domain's access port performs as a source port. To be noted that, it is important specify the source and sink ports. Especially the sink port should be specified at first. It is not allowed to launch latency measurement from the source port until the sink port has finished its configuration (loop-back). Otherwise the overhead will not be transmitted back to the source port, so that no latency data will be obtained.
+
+~~~~ ascii-art
+               +--------------+
+               | Orchestrator |
+               +--------------+
+               /       |      \
+              /        |       \
+             /         |        \
+            /          |         \
+      +------+     +------+     +------+
+      | DC-A |     | DC-N |     | DC-Z |
+      +------+     +------+     +------+
+         |             |            |
+  /-----------\        |        /-----------\
+  | Network-A | ---(domian-n)---| Network-Z |--+
+  |           |                 |           |<-|  loopback
+  \-----------/                 \-----------/
+~~~~
+
+{: #fig-inter-domain-latency title="Inter-domain service latency measurement"}
 
 # OAM Configuration
 
-The operation, administration and maintenance protocols and data
-models have been specified in {{!RFC8531}} for the connection-oriented
-network.  The model is referenced in this work to develop an
-Ethernet-specific OAM models, which is augmenting the service
-performance monitoring data model.
+The operation, administration and maintenance protocols and data models have been specified in {{!RFC8531}} for the connection-oriented network.  The model is referenced in this work to develop an Ethernet-specific OAM models, which is augmenting the service performance monitoring data model.
 
-The definitions of OAM terminologies, such as maintainence
-Maintenance Domain (MD), Maintenance Association (MA), and
-Maintenance End Points (MEP), can be found in {{!RFC8531}} as well.
+The definitions of OAM terminologies, such as Maintenance Domain (MD), Maintenance Association (MA), and Maintenance End Points (MEP), can be found in {{!RFC8531}} as well.
 
 # YANG Model for Performance Monitoring
 
