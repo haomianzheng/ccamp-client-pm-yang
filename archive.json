@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-12T01:12:25.882504+00:00",
+  "timestamp": "2024-11-14T01:13:58.163021+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -135,6 +135,26 @@
       "body": "Update the references to WDM tunnel model [draft-ietf-ccamp-wdm-tunnel-yang](https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang)) which has replaced both WSON and Flexi-grid tunnel models\r\n",
       "createdAt": "2024-01-11T13:19:29Z",
       "updatedAt": "2024-01-11T13:19:29Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOKd2bN86eVtSb",
+      "title": "Clean-up github repository",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/8",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "YuChaode"
+      ],
+      "labels": [
+        "documentation"
+      ],
+      "body": "The tagged version -10 release is not aligned with the published draft on datatracker since it does not include the changes done the version -10 published on datatracker\r\n\r\nhttps://author-tools.ietf.org/iddiff?url1=draft-zheng-ccamp-client-pm-yang-09&url2=draft-zheng-ccamp-client-pm-yang-10&difftype=--html\r\n",
+      "createdAt": "2024-11-13T19:02:33Z",
+      "updatedAt": "2024-11-13T19:02:33Z",
       "closedAt": null,
       "comments": []
     }
