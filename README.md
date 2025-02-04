@@ -11,7 +11,7 @@ This is the working area for the individual Internet-Draft, "A YANG Data Model f
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/italobusi/ccamp-client-pm-yang/blob//CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/italobusi/ccamp-client-pm-yang/blob/main-fork/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
