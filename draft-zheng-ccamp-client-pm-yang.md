@@ -39,7 +39,10 @@ author:
     country: Italy
     email: italo.busi@huawei.com
   -
-    name: TBD
+    name: Yanlei Zheng
+    org: China Unicom
+    country: China
+    email: zhengyanlei@chinaunicom.cn
   -
     name: Victor Lopez
     org: Nokia
@@ -52,7 +55,7 @@ author:
     country: Spain
     email: oscar.gonzalezdedios@telefonica.com
 
-contributor:
+#contributor:
 
 normative:
 
@@ -99,7 +102,7 @@ Consideration on Key Performance Information (KPI) monitoring for Virtual Networ
 
 VPN-level parameters and their monitoring have been defined in {{!I-D.www-bess-yang-vpn-service-pm}}.  This module focus on the performance on the topology at different layer or the overlay topology between VPN sites.  On the other hand, this document is focusing on the performance of the service configured between Customer Ends (CE).
 
-{{!draft-yu-ccamp-optical-resource-pm-yang}} is aimed to provide a performance management approach on the resource level in a traditional way. This resource could refer to physical resource, such as board, port etc., or logical resource, e.g. TTP etc. The management object is different with this document. But there is some relationship between these two documents. The PM data of client signal can be collected on some specific resource. This collection mechanism should be in the scope of this document.
+{{!I-D.yu-ccamp-optical-resource-pm-yang}} is aimed to provide a performance management approach on the resource level in a traditional way. This resource could refer to physical resource, such as board, port etc., or logical resource, e.g. TTP etc. The management object is different with this document. But there is some relationship between these two documents. The PM data of client signal can be collected on some specific resource. This collection mechanism should be in the scope of this document.
 
 # Use Cases of Performance Management of Client Signal
 
@@ -135,7 +138,6 @@ And for the service provider, continuous monitoring of key service performance a
      \______________/
 
 ~~~~
-
 {: #fig-sla-assurance title="Architecture of Private Line SLA Assurance"}
 
 # Consideration on Monitoring Parameters
@@ -165,7 +167,6 @@ For intra-domain services, the domain controller can differentiate who is the so
   |           |                 |           |<-|  loopback
   \-----------/                 \-----------/
 ~~~~
-
 {: #fig-inter-domain-latency title="Inter-domain service latency measurement"}
 
 # OAM Configuration
