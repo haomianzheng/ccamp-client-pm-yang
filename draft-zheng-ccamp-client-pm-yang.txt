@@ -441,7 +441,7 @@ Table of Contents
 
 8.1.  The Performance Monitoring YANG Code
 
-   <CODE BEGINS> file "ietf-service-pm@2021-07-07.yang"
+   <CODE BEGINS> file "ietf-service-pm@2024-03-04.yang"
    module ietf-service-pm {
      yang-version 1.1;
 
@@ -466,6 +466,7 @@ Table of Contents
        "
          WG List: <mailto:ccamp@ietf.org>
          ID-draft editor:
+           Chaode Yu (yuchaode@huawei.com)
            Haomian Zheng (zhenghaomian@huawei.com);
            Italo Busi (italo.busi@huawei.com);
            Yanlei Zheng (zhengyanlei@chinaunicom.cn);
@@ -489,7 +490,7 @@ Table of Contents
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.";
 
-     revision 2021-07-07 {
+     revision 2024-03-04 {
        description
          "Initial version";
        reference
