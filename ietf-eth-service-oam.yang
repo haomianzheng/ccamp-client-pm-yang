@@ -7,15 +7,15 @@ module ietf-eth-service-oam {
   import ietf-eth-tran-service {
     prefix "ethtsvc";
   }
-  
+
   import ietf-service-pm {
     prefix "svc-pm";
   }
-  
+
   import ietf-trans-client-service {
     prefix "clntsvc";
   }
-  
+
   import ietf-network {
     prefix nw;
   }
@@ -26,6 +26,7 @@ module ietf-eth-service-oam {
     "
       WG List: <mailto:ccamp@ietf.org>
       ID-draft editor:
+        Chaode Yu (yuchaode@huawei.com)
         Haomian Zheng (zhenghaomian@huawei.com);
         Italo Busi (italo.busi@huawei.com);
         Yanlei Zheng (zhengyanlei@chinaunicom.cn);
@@ -49,52 +50,52 @@ module ietf-eth-service-oam {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
 
-  revision 2021-07-10 {
+  revision 2024-03-04 {
     description
       "Initial version";
     reference
       "ADD REFERENCE HERE";
   }
-  
+
   identity interval-type {
     description "Time interval";
   }
-  
+
   identity interval-3p33ms {
     base interval-type;
     description "3.33 milliseconds";
   }
-  
+
   identity interval-10ms {
     base interval-type;
     description "10 milliseconds";
   }
-  
+
   identity interval-100ms {
     base interval-type;
     description "100 milliseconds";
   }
-  
+
   identity interval-1s {
     base interval-type;
     description "1 second";
   }
-  
+
   identity interval-10s {
     base interval-type;
     description "10 seconds";
   }
-  
+
   identity interval-1m {
     base interval-type;
     description "1 minute";
   }
-  
+
   identity interval-10m {
     base interval-type;
     description "10 minutes";
   }
-  
+
   grouping eth-service-oam-config {
     container source {
       uses mep-config;
@@ -107,7 +108,7 @@ module ietf-eth-service-oam {
     uses interval-config;
     description "OAM configuration on Eth services.";
   }
-  
+
   grouping interval-config {
     description "OAM Interval Configuration.";
     leaf cc-interval {
@@ -131,7 +132,7 @@ module ietf-eth-service-oam {
       description "Delay measurement interval.";
     }
   }
-  
+
   grouping mep-config {
     description "OAM MEP Configuration.";
     leaf md-name {
@@ -162,7 +163,7 @@ module ietf-eth-service-oam {
       type string;
       description "Mapping with 802.lag MA level.";
     }
-    
+
     leaf mep-id {
       type uint8;
       description "0 if Abnormal";
@@ -177,32 +178,32 @@ module ietf-eth-service-oam {
   augment "/svc-pm:performance-monitoring/svc-pm:service-pm" {
     description
       "Augment with additional parameters required for Ethernet OAM";
-      
+
     container oam-config {
       description "OAM configuration container.";
       uses eth-service-oam-config;
     }
   }
-  
+
   grouping errors {
     description "The grouping of error information.";
     leaf error-code {
       type uint32;
       description "The error code.";
     }
-    
+
     leaf error-message {
       type string;
       description "The error message.";
     }
   }
-  
+
   /*
     * Operations
     */
   rpc configure-oam {
     description "Deliver OAM configurations. ";
-    
+
     input {
       list oam-config-list {
         key "service-name";
@@ -218,7 +219,7 @@ module ietf-eth-service-oam {
               path "/clntsvc:client-svc/clntsvc:client-svc-instances"
                  + "/clntsvc:client-svc-name";
             } 
-          
+
           }
           mandatory true;
           description "The name of service.";
@@ -226,7 +227,7 @@ module ietf-eth-service-oam {
         uses eth-service-oam-config;
       }
     }
-    
+
     output {
       list oam-config-list {
         key "service-name";
@@ -258,10 +259,10 @@ module ietf-eth-service-oam {
           description "Result of OAM configuration.";
         }
         uses errors;
-        
+
       }
     }
-    
+
     rpc delete-oam-configurations {
       description "Delete OAM configurations. ";
         input {
@@ -284,7 +285,7 @@ module ietf-eth-service-oam {
             description "The list of service.";
           }
         }
-    
+
         output {
           list oam-config-list {
             key "service-name";
@@ -302,7 +303,7 @@ module ietf-eth-service-oam {
               mandatory true;
               description "The name of service.";
             }   
-            
+
             leaf result {
               type enumeration {
                 enum success {
@@ -314,13 +315,13 @@ module ietf-eth-service-oam {
               }
               description "The result of OAM deletion.";
             }
-            
+
             uses errors;
             description "The list of service.";
           }
         }
     }
-    
+
     rpc get-node-eth-oam-configurations {
       description "Get the Eth node OAM configuration info.";
       input {
@@ -332,7 +333,7 @@ module ietf-eth-service-oam {
             "Node identifier.  Must be same in the topology."; 
         }
       }
-      
+
       output {
         list oam-list {
           leaf node-id {

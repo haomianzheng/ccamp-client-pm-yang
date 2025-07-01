@@ -139,7 +139,7 @@ VPN-level parameters and their monitoring have been defined in {{!I-D.www-bess-y
 
 {{!I-D.yu-ccamp-optical-resource-pm-yang}} is aimed to provide a performance management approach on the resource level in a traditional way. This resource stands for physical resource, such as board, port etc., or logical resource, e.g. TTP etc. The management object is different with this document. But there is some relationship between these two documents. The PM data of client signal can be collected on some specific resources.
 And usually there would be some additional calculation needed for client signal PM data.
-This collection mechanism, including which resource should be adopted, when these resource PM data should be collected and the calculation method are focus of this document.
+This collection mechanism, including which resource should be adopted, when these resource PM data should be collected and the calculation method are the focus of this document.
 
 # Use Cases of Performance Management of Client Signal
 
@@ -158,7 +158,7 @@ The section of 15.8.2.1.6 in {{ITU-T_G.709}} defines the mechanism of delay (lat
 
 SLA (Service Level Agreement) is an agreement aligned by the service provider and the user. This agreement defines service type, quality of service etc. which the service provider guarantees to the user.
 
-Transport private line service has got the advantage of hard isolation, large bandwidth, low latency and high reliability. So usually it is more expensive than the other fixed broadband services. From the user's perspective, they also have some special demand for the private line service. For example, some industry customers, e.g. stock and futures industry customers who have a lot of high-frequency trading requirement, have extremely high requirement on latency. The customer from government and security assurance department have extremely high requirements on service reliability. The Private line service users expect to monitor service performance indicators to ensure that their private line services are cost-effective and meet SLA requirements.
+Transport private line service has got the advantage of hard isolation, large bandwidth, low latency and high reliability. So usually it is more expensive than the other fixed broadband services. From the user's perspective, they also have some special demand for the private line service. For example, some industry customers, e.g. stock and futures industry customers who have a lot of high-frequency trading requirement, have extremely high requirement on latency. The customers from government and security assurance department have extremely high requirement on service reliability. The Private line service users expect to monitor service performance indicators to ensure that their private line services are cost-effective and meet SLA requirements.
 
 And for the service provider, continuous monitoring of key services' performance and proactive O&M can reduce customers' complaint and ensure SLA delivery. The performance data can even be used for precision marketing. For example, if the bandwidth usage of a user's private line is too high for a long time, the system can remind the user to adjust the bandwidth in a timely manner.
 
