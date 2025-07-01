@@ -5,14 +5,14 @@
 CCAMP Working Group                                                C. Yu
 Internet-Draft                                                  H. Zheng
 Intended status: Standards Track                                 I. Busi
-Expires: 8 August 2025                               Huawei Technologies
-                                                                     TBD
-                                                                        
+Expires: 2 January 2026                              Huawei Technologies
+                                                                Y. Zheng
+                                                            China Unicom
                                                                 V. Lopez
                                                                    Nokia
                                                      O. Gonzalez de Dios
                                                               Telefonica
-                                                         4 February 2025
+                                                             1 July 2025
 
 
        A YANG Data Model for Client Signal Performance Monitoring
@@ -61,7 +61,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 August 2025.
+   This Internet-Draft will expire on 2 January 2026.
 
 Copyright Notice
 
@@ -82,20 +82,24 @@ Table of Contents
    1.  Introduction
    2.  Terminology and Notations
    3.  Model Relationship
-   4.  Consideration on Monitoring Parameters
-   5.  OAM Configuration
-   6.  YANG Model for Performance Monitoring
-     6.1.  YANG Tree for Performance Monitoring
-     6.2.  YANG Tree for OAM Configuration
-   7.  YANG Code for Performance Monitoring
-     7.1.  The Performance Monitoring YANG Code
-     7.2.  The OAM Configuration YANG Code
-   8.  IANA Considerations
-   9.  Manageability Considerations
-   10. Security Considerations
-   11. References
-     11.1.  Normative References
-     11.2.  Informative References
+   4.  Use Cases of Performance Management of Client Signal
+     4.1.  Automatic Service Acceptance Test
+     4.2.  Private Line Service SLA Assurance
+   5.  Consideration on Monitoring Parameters
+     5.1.  Service Latency Measurement
+   6.  OAM Configuration
+   7.  YANG Model for Performance Monitoring
+     7.1.  YANG Tree for Performance Monitoring
+     7.2.  YANG Tree for OAM Configuration
+   8.  YANG Code for Performance Monitoring
+     8.1.  The Performance Monitoring YANG Code
+     8.2.  The OAM Configuration YANG Code
+   9.  IANA Considerations
+   10. Manageability Considerations
+   11. Security Considerations
+   12. References
+     12.1.  Normative References
+     12.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -168,22 +172,135 @@ Table of Contents
    focusing on the performance of the service configured between
    Customer Ends (CE).
 
-4.  Consideration on Monitoring Parameters
+   [I-D.yu-ccamp-optical-resource-pm-yang] is aimed to provide a
+   performance management approach on the resource level in a
+   traditional way.  This resource could refer to physical resource,
+   such as board, port etc., or logical resource, e.g. TTP etc.  The
+   management object is different with this document.  But there is some
+   relationship between these two documents.  The PM data of client
+   signal can be collected on some specific resource.  This collection
+   mechanism should be in the scope of this document.
 
-   There can be multiple groups of parameters for monitoring, such as
-   latency, bit error rate (BER).  Some of these parameters are layer-
-   dependent, for example, packet loss is only applicable in packet
-   networks are won't be neede for layer 1 OTN and layer 0 WSON.
+4.  Use Cases of Performance Management of Client Signal
 
-   This document starts with the specification of the latency
-   measurement for both Ethernet service and client signal service.  In
-   the future version additional parameters would be added into the data
-   model in the same approach as the latency in the current version.  A
-   candidate list of parameters to be monitored include: Latency, Packet
-   Loss, Bit Error Rate (BER), Jitter, Bandwidth, Byte/Packet number and
-   so on.
+4.1.  Automatic Service Acceptance Test
 
-5.  OAM Configuration
+   After the private line service is provisioned on the network, usually
+   it needs to take an acceptance test before it is deliver to the user.
+   This acceptance test includes traffic test to make sure that it's
+   reachable from the source access port to the destination access port.
+   The engineers need to take tester onsite, especially when the private
+   line service is an inter-domain service which the source and
+   destination could be in different cities, the acceptance test would
+   require a lot of human resource and time.
+
+   It is excellent if this acceptance test can be operated automatically
+   by interface instead of people.  For example, we can test the latency
+   of private line service to replace the connectivity test by human.
+   The session of 15.8.2.1.6 in ITU-T G.709 defines the mechanism of
+   delay (latency) measurement mechanism of ODU path.  If the latency
+   value could be returned successfully through the ODU path, then there
+   will not be interruption on the ODU path.
+
+4.2.  Private Line Service SLA Assurance
+
+   SLA (Service Level Agreement) is an agreement aligned by the service
+   provider and the user.  This agreement defines service type, quality
+   of service etc. which the service provider guarantees to the user.
+
+   Transport private line service has got the advantage of hard
+   isolation, large bandwidth, low latency and high reliability.  So
+   usually it is more expensive than the other fixed broadband services.
+   From the user's perspective, they also have some particular demand
+   for the private line service.  For example, some industry customers,
+   e.g. stock and futures industry customers who have a lot of high-
+   frequency trading requirement, have extremely high requirements on
+   latency.  The customer from government and security assurance
+   department have extremely high requirements on service reliability.
+   The Private line service users expect to monitor service performance
+   indicators to ensure that their private line services are cost-
+   effective and meet SLA requirements.
+
+   And for the service provider, continuous monitoring of key service
+   performance and proactive O&M can reduce customer complaints and
+   ensure SLA delivery.  The performance data can even be used for
+   precision marketing.  For example, if the bandwidth usage of a user's
+   private line is too high for a long time, the system can remind the
+   user to adjust the bandwidth in a timely manner.
+
+    +----------+   +----------+
+    | Operator |   |   User   |
+    +----------+   +----------+
+         ||             ||
+    +----------+   +----------+
+    |   OSS    |   |   APP    |
+    +----------+   +----------+
+         ||             ||
+     +-----------------------+
+     |  domain Controller    |
+     +-----------------------+
+               ||
+         --------------
+        /    Network   \
+        \______________/
+
+            Figure 1: Architecture of Private Line SLA Assurance
+
+5.  Consideration on Monitoring Parameters
+
+   For the mechanism of performance monitoring, there have been a lot of
+   discussion in ITU-T G.709, G.874, G.875, G.7710, G.7718, and G.7719.
+   This document would rather reference the definition of ITU-T than
+   restarting new discussion.  But for the service level's performance
+   parameter, there is not enough definition in ITU-T and IETF, this
+   document will focus on how to define a service level performance
+   parameter.  Considering there could be a lot of new service
+   performance parameters, it is also suggested to define a generic data
+   model to conduct the service performance parameters.
+
+5.1.  Service Latency Measurement
+
+   According to the description of session 15.8.2.1.6 in ITU-T g.709, PM
+   overhead can be used to measure the delay (latency) of ODU path.
+   Simply speaking, in the latency measurement process, the PM overhead
+   is generated and delivered on the source port and looped back at the
+   sink port.  By observing the 0-1 change of PM overhead on the source
+   port, it is able to obtain latency data of E2E ODU path.
+
+   For intra-domain services, the domain controller can differentiate
+   who is the source port and who is the sink port， and orchestrate the
+   whole measurement process.  But for inter-domain service, it is hard
+   for the domain controller to know the access port in its domain is a
+   source or sink port.  Therefore an orchestrator above is needed to do
+   this orchestration.  The orchestrator specify one of the domain's
+   access port performs as the sink port and the other domain's access
+   port performs as a source port.  To be noted that, it is important
+   specify the source and sink ports.  Especially the sink port should
+   be specified at first.  It is not allowed to launch latency
+   measurement from the source port until the sink port has finished its
+   configuration (loop-back).  Otherwise the overhead will not be
+   transmitted back to the source port, so that no latency data will be
+   obtained.
+
+                  +--------------+
+                  | Orchestrator |
+                  +--------------+
+                  /       |      \
+                 /        |       \
+                /         |        \
+               /          |         \
+         +------+     +------+     +------+
+         | DC-A |     | DC-N |     | DC-Z |
+         +------+     +------+     +------+
+            |             |            |
+     /-----------\        |        /-----------\
+     | Network-A | ---(domian-n)---| Network-Z |--+
+     |           |                 |           |<-|  loopback
+     \-----------/                 \-----------/
+
+             Figure 2: Inter-domain service latency measurement
+
+6.  OAM Configuration
 
    The operation, administration and maintenance protocols and data
    models have been specified in [RFC8531] for the connection-oriented
@@ -191,13 +308,13 @@ Table of Contents
    Ethernet-specific OAM models, which is augmenting the service
    performance monitoring data model.
 
-   The definitions of OAM terminologies, such as maintainence
-   Maintenance Domain (MD), Maintenance Association (MA), and
-   Maintenance End Points (MEP), can be found in [RFC8531] as well.
+   The definitions of OAM terminologies, such as Maintenance Domain
+   (MD), Maintenance Association (MA), and Maintenance End Points (MEP),
+   can be found in [RFC8531] as well.
 
-6.  YANG Model for Performance Monitoring
+7.  YANG Model for Performance Monitoring
 
-6.1.  YANG Tree for Performance Monitoring
+7.1.  YANG Tree for Performance Monitoring
 
    module: ietf-service-pm
      +--rw performance-monitoring
@@ -230,9 +347,9 @@ Table of Contents
               +--ro alarm
                  +--ro status?   identityref
 
-               Figure 1: YANG Tree for Performance Monitoring
+               Figure 3: YANG Tree for Performance Monitoring
 
-6.2.  YANG Tree for OAM Configuration
+7.2.  YANG Tree for OAM Configuration
 
    module: ietf-eth-service-oam
      augment /svc-pm:performance-monitoring/svc-pm:service-pm:
@@ -313,11 +430,11 @@ Table of Contents
                    +--ro mep-id           uint8
                    +--ro remote-mep-id?   uint8
 
-                 Figure 2: YANG Tree for OAM Configuration
+                 Figure 4: YANG Tree for OAM Configuration
 
-7.  YANG Code for Performance Monitoring
+8.  YANG Code for Performance Monitoring
 
-7.1.  The Performance Monitoring YANG Code
+8.1.  The Performance Monitoring YANG Code
 
    <CODE BEGINS> file "ietf-service-pm@2021-07-07.yang"
    module ietf-service-pm {
@@ -714,9 +831,9 @@ Table of Contents
    }
    <CODE ENDS>
 
-                 Figure 3: Performance Monitoring YANG Code
+                 Figure 5: Performance Monitoring YANG Code
 
-7.2.  The OAM Configuration YANG Code
+8.2.  The OAM Configuration YANG Code
 
    <CODE BEGINS> file "ietf-eth-service-oam@2021-07-10.yang"
    module ietf-eth-service-oam {
@@ -1074,9 +1191,9 @@ Table of Contents
    }
    <CODE ENDS>
 
-                   Figure 4: OAM Configuration YANG Code
+                   Figure 6: OAM Configuration YANG Code
 
-8.  IANA Considerations
+9.  IANA Considerations
 
    This document requests IANA to register the following URIs in the
    "ns" subregistry within the "IETF XML Registry" [RFC3688].  Following
@@ -1107,11 +1224,11 @@ Table of Contents
    RFC Editor: Please replace XXXX with the RFC number assigned to this
    document.
 
-9.  Manageability Considerations
+10.  Manageability Considerations
 
    TBD.
 
-10.  Security Considerations
+11.  Security Considerations
 
    The data following the model defined in this document is exchanged
    via, for example, the interface between an orchestrator and a
@@ -1122,17 +1239,17 @@ Table of Contents
    RESTCONF protocol defined in [RFC8040], or maybe via the NETCONF
    protocol [RFC6241].
 
-11.  References
+12.  References
 
-11.1.  Normative References
+12.1.  Normative References
 
    [I-D.ietf-ccamp-client-signal-yang]
               Zheng, H., Guo, A., Busi, I., Snitser, A., and C. Yu, "A
               YANG Data Model for Transport Network Client Signals",
               Work in Progress, Internet-Draft, draft-ietf-ccamp-client-
-              signal-yang-13, 1 August 2024,
+              signal-yang-14, 4 February 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              client-signal-yang-13>.
+              client-signal-yang-14>.
 
    [I-D.ietf-ccamp-layer1-types]
               Zheng, H. and I. Busi, "Common YANG Data Types for Layer 1
@@ -1146,9 +1263,9 @@ Table of Contents
               Ceccarelli, "YANG models for Virtual Network (VN)/TE
               Performance Monitoring Telemetry and Scaling Intent
               Autonomics", Work in Progress, Internet-Draft, draft-ietf-
-              teas-actn-pm-telemetry-autonomics-14, 19 October 2024,
+              teas-actn-pm-telemetry-autonomics-15, 21 April 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-pm-telemetry-autonomics-14>.
+              actn-pm-telemetry-autonomics-15>.
 
    [I-D.www-bess-yang-vpn-service-pm]
               Wu, Q., Boucadair, M., de Dios, O. G., Wen, B., Liu, C.,
@@ -1157,6 +1274,14 @@ Table of Contents
               draft-www-bess-yang-vpn-service-pm-06, 22 April 2020,
               <https://datatracker.ietf.org/doc/html/draft-www-bess-
               yang-vpn-service-pm-06>.
+
+   [I-D.yu-ccamp-optical-resource-pm-yang]
+              Yu, C., Peruzzini, F., Yanlei, Z., Busi, I., Guo, A.,
+              Lopez, V., and XingZhao, "A YANG Data Model for Optical
+              Resource Performance Monitoring", Work in Progress,
+              Internet-Draft, draft-yu-ccamp-optical-resource-pm-yang-
+              03, 4 March 2024, <https://datatracker.ietf.org/doc/html/
+              draft-yu-ccamp-optical-resource-pm-yang-03>.
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
@@ -1182,15 +1307,15 @@ Table of Contents
               DOI 10.17487/RFC8531, April 2019,
               <https://www.rfc-editor.org/rfc/rfc8531>.
 
-11.2.  Informative References
+12.2.  Informative References
 
    [I-D.ietf-ccamp-otn-tunnel-model]
               Zheng, H., Busi, I., Belotti, S., Lopez, V., and Y. Xu, "A
               YANG Data Model for Optical Transport Network (OTN)
               Tunnels and Label Switched Paths", Work in Progress,
-              Internet-Draft, draft-ietf-ccamp-otn-tunnel-model-22, 3
-              December 2024, <https://datatracker.ietf.org/doc/html/
-              draft-ietf-ccamp-otn-tunnel-model-22>.
+              Internet-Draft, draft-ietf-ccamp-otn-tunnel-model-23, 4
+              June 2025, <https://datatracker.ietf.org/doc/html/draft-
+              ietf-ccamp-otn-tunnel-model-23>.
 
    [I-D.ietf-ccamp-wson-tunnel-model]
               Lee, Y., Zheng, H., Guo, A., Lopez, V., King, D., Yoon, B.
@@ -1230,7 +1355,10 @@ Authors' Addresses
    Email: italo.busi@huawei.com
 
 
-   TBD
+   Yanlei Zheng
+   China Unicom
+   China
+   Email: zhengyanlei@chinaunicom.cn
 
 
    Victor Lopez
