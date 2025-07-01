@@ -182,7 +182,7 @@ Table of Contents
    there would be some additional calculation needed for client signal
    PM data.  This collection mechanism, including which resource should
    be adopted, when these resource PM data should be collected and the
-   calculation method are focus of this document.
+   calculation method are the focus of this document.
 
 4.  Use Cases of Performance Management of Client Signal
 
@@ -219,8 +219,8 @@ Table of Contents
    the private line service.  For example, some industry customers, e.g.
    stock and futures industry customers who have a lot of high-frequency
    trading requirement, have extremely high requirement on latency.  The
-   customer from government and security assurance department have
-   extremely high requirements on service reliability.  The Private line
+   customers from government and security assurance department have
+   extremely high requirement on service reliability.  The Private line
    service users expect to monitor service performance indicators to
    ensure that their private line services are cost-effective and meet
    SLA requirements.
@@ -869,6 +869,7 @@ Table of Contents
        "
          WG List: <mailto:ccamp@ietf.org>
          ID-draft editor:
+           Chaode Yu (yuchaode@huawei.com)
            Haomian Zheng (zhenghaomian@huawei.com);
            Italo Busi (italo.busi@huawei.com);
            Yanlei Zheng (zhengyanlei@chinaunicom.cn);
@@ -892,7 +893,7 @@ Table of Contents
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.";
 
-     revision 2021-07-10 {
+     revision 2024-03-04 {
        description
          "Initial version";
        reference

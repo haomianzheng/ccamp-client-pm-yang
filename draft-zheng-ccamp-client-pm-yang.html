@@ -1302,7 +1302,7 @@ shown.<a href="#section-2-2.5.1" class="pilcrow">¶</a></p>
 <p id="section-3-3">VPN-level parameters and their monitoring have been defined in <span>[<a href="#I-D.www-bess-yang-vpn-service-pm" class="cite xref">I-D.www-bess-yang-vpn-service-pm</a>]</span>.  This module focus on the performance on the topology at different layer or the overlay topology between VPN sites.  On the other hand, this document is focusing on the performance of the service configured between Customer Ends (CE).<a href="#section-3-3" class="pilcrow">¶</a></p>
 <p id="section-3-4"><span>[<a href="#I-D.yu-ccamp-optical-resource-pm-yang" class="cite xref">I-D.yu-ccamp-optical-resource-pm-yang</a>]</span> is aimed to provide a performance management approach on the resource level in a traditional way. This resource stands for physical resource, such as board, port etc., or logical resource, e.g. TTP etc. The management object is different with this document. But there is some relationship between these two documents. The PM data of client signal can be collected on some specific resources.
 And usually there would be some additional calculation needed for client signal PM data.
-This collection mechanism, including which resource should be adopted, when these resource PM data should be collected and the calculation method are focus of this document.<a href="#section-3-4" class="pilcrow">¶</a></p>
+This collection mechanism, including which resource should be adopted, when these resource PM data should be collected and the calculation method are the focus of this document.<a href="#section-3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="use-cases-of-performance-management-of-client-signal">
@@ -1330,7 +1330,7 @@ The section of 15.8.2.1.6 in <span>[<a href="#ITU-T_G.709" class="cite xref">ITU
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-private-line-service-sla-as" class="section-name selfRef">Private Line Service SLA Assurance</a>
         </h3>
 <p id="section-4.2-1">SLA (Service Level Agreement) is an agreement aligned by the service provider and the user. This agreement defines service type, quality of service etc. which the service provider guarantees to the user.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.2-2">Transport private line service has got the advantage of hard isolation, large bandwidth, low latency and high reliability. So usually it is more expensive than the other fixed broadband services. From the user's perspective, they also have some special demand for the private line service. For example, some industry customers, e.g. stock and futures industry customers who have a lot of high-frequency trading requirement, have extremely high requirement on latency. The customer from government and security assurance department have extremely high requirements on service reliability. The Private line service users expect to monitor service performance indicators to ensure that their private line services are cost-effective and meet SLA requirements.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+<p id="section-4.2-2">Transport private line service has got the advantage of hard isolation, large bandwidth, low latency and high reliability. So usually it is more expensive than the other fixed broadband services. From the user's perspective, they also have some special demand for the private line service. For example, some industry customers, e.g. stock and futures industry customers who have a lot of high-frequency trading requirement, have extremely high requirement on latency. The customers from government and security assurance department have extremely high requirement on service reliability. The Private line service users expect to monitor service performance indicators to ensure that their private line services are cost-effective and meet SLA requirements.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2-3">And for the service provider, continuous monitoring of key services' performance and proactive O&amp;M can reduce customers' complaint and ensure SLA delivery. The performance data can even be used for precision marketing. For example, if the bandwidth usage of a user's private line is too high for a long time, the system can remind the user to adjust the bandwidth in a timely manner.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
 <span id="name-architecture-of-private-lin"></span><div id="fig-sla-assurance">
 <figure id="figure-1">
@@ -2018,6 +2018,7 @@ module ietf-eth-service-oam {
     "
       WG List: &lt;mailto:ccamp@ietf.org&gt;
       ID-draft editor:
+        Chaode Yu (yuchaode@huawei.com)
         Haomian Zheng (zhenghaomian@huawei.com);
         Italo Busi (italo.busi@huawei.com);
         Yanlei Zheng (zhengyanlei@chinaunicom.cn);
@@ -2041,7 +2042,7 @@ module ietf-eth-service-oam {
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
 
-  revision 2021-07-10 {
+  revision 2024-03-04 {
     description
       "Initial version";
     reference
