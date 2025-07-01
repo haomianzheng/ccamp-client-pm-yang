@@ -108,8 +108,8 @@ Table of Contents
    Client-layer network and server-layer network have been respectively
    modeled to allow the tunnels carrying the client traffic.  Server-
    layers are modeled as tunnels with various switching technologies,
-   such as OTN in [I-D.ietf-ccamp-otn-tunnel-model] and WSON in
-   [I-D.ietf-ccamp-wson-tunnel-model].  Client-layers are modeled as
+   such as OTN in [I-D.ietf-ccamp-otn-tunnel-model] and WDM in
+   [I-D.ietf-ccamp-wdm-tunnel-yang].  Client-layers are modeled as
    client signals according to the client-signal identities specified in
    [I-D.ietf-ccamp-layer1-types].  These client signals can be
    configured to existing tunnels via the client signal configuration
@@ -174,30 +174,34 @@ Table of Contents
 
    [I-D.yu-ccamp-optical-resource-pm-yang] is aimed to provide a
    performance management approach on the resource level in a
-   traditional way.  This resource could refer to physical resource,
-   such as board, port etc., or logical resource, e.g. TTP etc.  The
-   management object is different with this document.  But there is some
+   traditional way.  This resource stands for physical resource, such as
+   board, port etc., or logical resource, e.g. TTP etc.  The management
+   object is different with this document.  But there is some
    relationship between these two documents.  The PM data of client
-   signal can be collected on some specific resource.  This collection
-   mechanism should be in the scope of this document.
+   signal can be collected on some specific resources.  And usually
+   there would be some additional calculation needed for client signal
+   PM data.  This collection mechanism, including which resource should
+   be adopted, when these resource PM data should be collected and the
+   calculation method are focus of this document.
 
 4.  Use Cases of Performance Management of Client Signal
 
 4.1.  Automatic Service Acceptance Test
 
    After the private line service is provisioned on the network, usually
-   it needs to take an acceptance test before it is deliver to the user.
-   This acceptance test includes traffic test to make sure that it's
-   reachable from the source access port to the destination access port.
-   The engineers need to take tester onsite, especially when the private
-   line service is an inter-domain service which the source and
-   destination could be in different cities, the acceptance test would
-   require a lot of human resource and time.
+   it needs to take an acceptance test before it is delivered to the
+   user.  This acceptance test includes some connectivity validation,
+   such as traffic test, to make sure that it's reachable from the
+   source access port to the destination access port.  The engineers
+   need to take tester onsite and run it manually.  It is time consuming
+   especially when the private line service is an inter-domain service
+   which the source and destination could be in different cities.
 
    It is excellent if this acceptance test can be operated automatically
-   by interface instead of people.  For example, we can test the latency
-   of private line service to replace the connectivity test by human.
-   The session of 15.8.2.1.6 in ITU-T G.709 defines the mechanism of
+   by interface instead of being done manually.  For some scenarios, it
+   is feasible to achieve this target.  For example, we can test the
+   latency of private line service to replace the connectivity test.
+   The section of 15.8.2.1.6 in [ITU-T_G.709] defines the mechanism of
    delay (latency) measurement mechanism of ODU path.  If the latency
    value could be returned successfully through the ODU path, then there
    will not be interruption on the ODU path.
@@ -211,18 +215,18 @@ Table of Contents
    Transport private line service has got the advantage of hard
    isolation, large bandwidth, low latency and high reliability.  So
    usually it is more expensive than the other fixed broadband services.
-   From the user's perspective, they also have some particular demand
-   for the private line service.  For example, some industry customers,
-   e.g. stock and futures industry customers who have a lot of high-
-   frequency trading requirement, have extremely high requirements on
-   latency.  The customer from government and security assurance
-   department have extremely high requirements on service reliability.
-   The Private line service users expect to monitor service performance
-   indicators to ensure that their private line services are cost-
-   effective and meet SLA requirements.
+   From the user's perspective, they also have some special demand for
+   the private line service.  For example, some industry customers, e.g.
+   stock and futures industry customers who have a lot of high-frequency
+   trading requirement, have extremely high requirement on latency.  The
+   customer from government and security assurance department have
+   extremely high requirements on service reliability.  The Private line
+   service users expect to monitor service performance indicators to
+   ensure that their private line services are cost-effective and meet
+   SLA requirements.
 
-   And for the service provider, continuous monitoring of key service
-   performance and proactive O&M can reduce customer complaints and
+   And for the service provider, continuous monitoring of key services'
+   performance and proactive O&M can reduce customers' complaint and
    ensure SLA delivery.  The performance data can even be used for
    precision marketing.  For example, if the bandwidth usage of a user's
    private line is too high for a long time, the system can remind the
@@ -249,26 +253,27 @@ Table of Contents
 5.  Consideration on Monitoring Parameters
 
    For the mechanism of performance monitoring, there have been a lot of
-   discussion in ITU-T G.709, G.874, G.875, G.7710, G.7718, and G.7719.
-   This document would rather reference the definition of ITU-T than
-   restarting new discussion.  But for the service level's performance
-   parameter, there is not enough definition in ITU-T and IETF, this
-   document will focus on how to define a service level performance
-   parameter.  Considering there could be a lot of new service
-   performance parameters, it is also suggested to define a generic data
-   model to conduct the service performance parameters.
+   discussion in [ITU-T_G.709], [ITU-T_G.874], [ITU-T_G.875],
+   [ITU-T_G.7710], [ITU-T_G.7718], and [ITU-T_G.7719].  This document
+   would like to reference the definition of ITU-T instead of restarting
+   new discussion.  But for the service level's performance parameter,
+   there is not enough definition both in ITU-T and IETF, this document
+   will focus on how to define a service level performance parameter.
+   Considering there could be a lot of new service performance
+   parameters in the future, it is also suggested to define a generic
+   data model to conduct the service performance parameters.
 
 5.1.  Service Latency Measurement
 
-   According to the description of session 15.8.2.1.6 in ITU-T g.709, PM
-   overhead can be used to measure the delay (latency) of ODU path.
+   According to the description of section 15.8.2.1.6 in [ITU-T_G.709],
+   PM overhead can be used to measure the delay (latency) of ODU path.
    Simply speaking, in the latency measurement process, the PM overhead
    is generated and delivered on the source port and looped back at the
    sink port.  By observing the 0-1 change of PM overhead on the source
    port, it is able to obtain latency data of E2E ODU path.
 
    For intra-domain services, the domain controller can differentiate
-   who is the source port and who is the sink port， and orchestrate the
+   who is the source port and who is the sink port, and orchestrate the
    whole measurement process.  But for inter-domain service, it is hard
    for the domain controller to know the access port in its domain is a
    source or sink port.  Therefore an orchestrator above is needed to do
@@ -278,9 +283,9 @@ Table of Contents
    specify the source and sink ports.  Especially the sink port should
    be specified at first.  It is not allowed to launch latency
    measurement from the source port until the sink port has finished its
-   configuration (loop-back).  Otherwise the overhead will not be
-   transmitted back to the source port, so that no latency data will be
-   obtained.
+   configuration (loop-back operation).  Otherwise the overhead will not
+   be transmitted back to the source port, so that no latency data will
+   be obtained.
 
                   +--------------+
                   | Orchestrator |
@@ -835,7 +840,7 @@ Table of Contents
 
 8.2.  The OAM Configuration YANG Code
 
-   <CODE BEGINS> file "ietf-eth-service-oam@2021-07-10.yang"
+   <CODE BEGINS> file "ietf-eth-service-oam@2024-03-04.yang"
    module ietf-eth-service-oam {
      yang-version 1.1;
 
@@ -1283,6 +1288,37 @@ Table of Contents
               03, 4 March 2024, <https://datatracker.ietf.org/doc/html/
               draft-yu-ccamp-optical-resource-pm-yang-03>.
 
+   [ITU-T_G.709]
+              International Telecommunication Union, "Interfaces for the
+              optical transport network", ITU-T Recommendation G.709 ,
+              June 2020.
+
+   [ITU-T_G.7710]
+              International Telecommunication Union, "Common equipment
+              management function requirements", ITU-T Recommendation
+              G.7710 , October 2020.
+
+   [ITU-T_G.7718]
+              International Telecommunication Union, "Framework for the
+              management of management-control components and
+              functions", ITU-T Recommendation G.7718 , October 2020.
+
+   [ITU-T_G.7719]
+              International Telecommunication Union, "Management
+              information model for management-control components and
+              functions", ITU-T Recommendation G.7719 , June 2021.
+
+   [ITU-T_G.874]
+              International Telecommunication Union, "Management aspects
+              of optical transport network elements", ITU-T
+              Recommendation G.874 , November 2022.
+
+   [ITU-T_G.875]
+              International Telecommunication Union, "Optical transport
+              network: Protocol-neutral management information model for
+              the network element view", ITU-T Recommendation G.875 ,
+              June 2020.
+
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
               DOI 10.17487/RFC3688, January 2004,
               <https://www.rfc-editor.org/rfc/rfc3688>.
@@ -1317,13 +1353,13 @@ Table of Contents
               June 2025, <https://datatracker.ietf.org/doc/html/draft-
               ietf-ccamp-otn-tunnel-model-23>.
 
-   [I-D.ietf-ccamp-wson-tunnel-model]
-              Lee, Y., Zheng, H., Guo, A., Lopez, V., King, D., Yoon, B.
-              Y., and R. Vilalta, "A Yang Data Model for WSON Tunnel",
-              Work in Progress, Internet-Draft, draft-ietf-ccamp-wson-
-              tunnel-model-09, 9 July 2023,
+   [I-D.ietf-ccamp-wdm-tunnel-yang]
+              Guo, A., Belotti, S., Galimberti, G., de Madrid, U. A.,
+              and D. P. Burrero, "A YANG Data Model for WDM Tunnels",
+              Work in Progress, Internet-Draft, draft-ietf-ccamp-wdm-
+              tunnel-yang-04, 23 April 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              wson-tunnel-model-09>.
+              wdm-tunnel-yang-04>.
 
    [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
               BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
