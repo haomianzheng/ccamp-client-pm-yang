@@ -243,7 +243,7 @@ The definitions of OAM terminologies, such as Maintenance Domain (MD), Maintenan
 {::include ietf-service-pm.yang}
 ~~~~
 {: #fig-service-pm-yang title="Performance Monitoring YANG Code"
-sourcecode-markers="true" sourcecode-name="ietf-service-pm@2021-07-07.yang"}
+sourcecode-markers="true" sourcecode-name="ietf-service-pm@2024-03-04.yang"}
 
 ## The OAM Configuration YANG Code
 
