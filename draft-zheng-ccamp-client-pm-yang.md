@@ -89,7 +89,7 @@ normative:
     date: November 2022
     seriesinfo: ITU-T Recommendation G.874
   ITU-T_G.875:
-    title: Optical transport network: Protocol-neutral management information model for the network element view
+    title: "Optical transport network: Protocol-neutral management information model for the network element view"
     author:
       org: International Telecommunication Union
     date: June 2020
