@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-01T01:37:20.861509+00:00",
+  "timestamp": "2025-07-03T01:23:35.683242+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -234,24 +234,26 @@
       "id": "PR_kwDOKd2bN85rRYoo",
       "title": "Updates from IETF119",
       "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "YuChaode",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-04-01T03:12:36Z",
-      "updatedAt": "2024-04-01T03:12:37Z",
+      "updatedAt": "2025-07-01T16:38:39Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "7b00472e6e8ed0f94c64280b0b938f0e9de34e66",
       "headRepository": "YuChaode/ccamp-client-pm-yang",
       "headRefName": "main",
       "headRefOid": "c6b6a70b6a092607861e255b712dd0a468cc4333",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-07-01T16:38:39Z",
+      "mergedAt": "2025-07-01T16:38:38Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "50024de301a4c9cba741f795a39e800f7d5e2c49"
+      },
       "comments": [],
       "reviews": []
     }
