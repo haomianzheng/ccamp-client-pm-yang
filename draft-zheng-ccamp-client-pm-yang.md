@@ -223,15 +223,15 @@ The definitions of OAM terminologies, such as Maintenance Domain (MD), Maintenan
 
 ## YANG Tree for Performance Monitoring
 
-~~~~ ascii-art
-{::include ietf-service-pm.tree}
+~~~~ yangtree
+{::include yang/ietf-service-pm.tree}
 ~~~~
 {: #fig-service-pm-tree title="YANG Tree for Performance Monitoring" artwork-name="ietf-service-pm.tree"}
 
 ## YANG Tree for OAM Configuration
 
-~~~~ ascii-art
-{::include ietf-eth-service-oam.tree}
+~~~~ yangtree
+{::include yang/ietf-eth-service-oam.tree}
 ~~~~
 {: #fig-eth-service-oam-tree title="YANG Tree for OAM Configuration" artwork-name="ietf-eth-service-oam.tree"}
 
@@ -240,7 +240,7 @@ The definitions of OAM terminologies, such as Maintenance Domain (MD), Maintenan
 ## The Performance Monitoring YANG Code
 
 ~~~~ yang
-{::include ietf-service-pm.yang}
+{::include yang/ietf-service-pm.yang}
 ~~~~
 {: #fig-service-pm-yang title="Performance Monitoring YANG Code"
 sourcecode-markers="true" sourcecode-name="ietf-service-pm@2024-03-04.yang"}
@@ -248,7 +248,7 @@ sourcecode-markers="true" sourcecode-name="ietf-service-pm@2024-03-04.yang"}
 ## The OAM Configuration YANG Code
 
 ~~~~ yang
-{::include ietf-eth-service-oam.yang}
+{::include yang/ietf-eth-service-oam.yang}
 ~~~~
 {: #fig-eth-service-oam-yang title="OAM Configuration YANG Code"
 sourcecode-markers="true" sourcecode-name="ietf-eth-service-oam@2024-03-04.yang"}
