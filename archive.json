@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-03T01:23:35.683242+00:00",
+  "timestamp": "2026-09-03T01:52:04.626730+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -155,6 +155,86 @@
       "body": "The tagged version -10 release is not aligned with the published draft on datatracker since it does not include the changes done the version -10 published on datatracker\r\n\r\nhttps://author-tools.ietf.org/iddiff?url1=draft-zheng-ccamp-client-pm-yang-09&url2=draft-zheng-ccamp-client-pm-yang-10&difftype=--html\r\n",
       "createdAt": "2024-11-13T19:02:33Z",
       "updatedAt": "2024-11-13T19:02:33Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOKd2bN88AAAABJk6BeA",
+      "title": "Expand section 5",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/9",
+      "state": "OPEN",
+      "author": "tanyanxia",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-07-21T10:02:21Z",
+      "updatedAt": "2026-07-21T10:04:09Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "aguoietf",
+          "authorAssociation": "NONE",
+          "body": "Section 5 describes only delay measurement use cases while the model covers many other PM measurements.\n\nSection 5 should be updated such that:\n- the overview section describes the general PM measurements.\n- For each PM measurement there should be a subsection describing the measurement (with figure illustration)",
+          "createdAt": "2026-07-21T10:04:09Z",
+          "updatedAt": "2026-07-21T10:04:09Z"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOKd2bN88AAAABJlCfeg",
+      "title": "Adding new use case for ACTN",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/10",
+      "state": "OPEN",
+      "author": "aguoietf",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The use case should report that an MDSC consumes PM information from each of the domain controllers in a multi-domain scenario.",
+      "createdAt": "2026-07-21T10:19:35Z",
+      "updatedAt": "2026-07-21T10:19:35Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOKd2bN88AAAABJlHVkw",
+      "title": "Inconsistency between terminology and model",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/11",
+      "state": "OPEN",
+      "author": "aguoietf",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Section 6 describes the terminologies of MA, MD and MEP according to RFC8531, while the YANG model defines MEG according to Y.1731 (mapping to 802.lag MA name). \n\nThe terminologies should keep consistent with relevant references.",
+      "createdAt": "2026-07-21T10:30:06Z",
+      "updatedAt": "2026-07-28T21:23:33Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See Appendix V of ITU-T G.8013 (2025) for a mapping between IEEE terminology (MD, MA) and ITU-T terminology (MEG)\n",
+          "createdAt": "2026-07-28T21:23:33Z",
+          "updatedAt": "2026-07-28T21:23:33Z"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOKd2bN88AAAABJlRaXA",
+      "title": "Describe the design choice of the model in this draft",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/12",
+      "state": "OPEN",
+      "author": "aguoietf",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "The model in this draft is designed as an independent model rather than augmenting existing model, therefore it does not impact existing data models.",
+      "createdAt": "2026-07-21T10:51:22Z",
+      "updatedAt": "2026-07-21T10:51:22Z",
       "closedAt": null,
       "comments": []
     }
