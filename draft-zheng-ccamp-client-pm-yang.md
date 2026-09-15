@@ -21,28 +21,18 @@ venue:
 
 author:
   -
-    name: Chaode Yu
-    org: Huawei Technologies
-    email: yuchaode@huawei.com
+    name: Yanxia Tan
+    org: China Unicom
+    email: tanyx11@chinaunicom.cn
   -
-    name: Haomian Zheng
+    name: Xiao Li
     org: Huawei Technologies
-    street: H1, Huawei Xiliu Beipo Village, Songshan Lake
-    city: Dongguan
-    region: Guangdong
-    code: 523808
-    country: China
-    email: zhenghaomian@huawei.com
+    email: lixiao33@huawei.com
   -
     name: Italo Busi
     org: Huawei Technologies
     country: Italy
     email: italo.busi@huawei.com
-  -
-    name: Yanlei Zheng
-    org: China Unicom
-    country: China
-    email: zhengyanlei@chinaunicom.cn
   -
     name: Victor Lopez
     org: Nokia
@@ -300,7 +290,27 @@ protocol {{!RFC6241}}.
 
 --- back
 
-# Acknowledgments
+# Contributors
 {:numbered="false"}
 
-TODO acknowledge.
+The following people contributed significantly to this document:
+
+Chaode Yu
+
+Huawei Technologies
+
+Email: yuchaode@huawei.com
+
+
+Haomian Zheng
+
+Huawei Technologies
+
+Email: zhenghaomian@huawei.com
+
+
+Yanlei Zheng
+
+China Unicom
+
+Email: zhengyanlei@chinaunicom.cn
