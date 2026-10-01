@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-09-03T01:52:04.626730+00:00",
+  "timestamp": "2026-10-01T02:52:58.139363+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -336,6 +336,59 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 13,
+      "id": "PR_kwDOKd2bN88AAAABF2K_eA",
+      "title": "Clean-up changes done in the -16 update",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/13",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-09-30T07:25:37Z",
+      "updatedAt": "2026-09-30T08:58:16Z",
+      "baseRepository": "haomianzheng/ccamp-client-pm-yang",
+      "baseRefName": "main",
+      "baseRefOid": "4b01c1c205a73c2a005c36497b8b9556a923cec2",
+      "headRepository": "italobusi/ccamp-client-pm-yang",
+      "headRefName": "clean-up",
+      "headRefOid": "1ea28bf62317f972006de0e5445254771cc76caf",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOKd2bN88AAAABP613XQ",
+          "commit": {
+            "abbreviatedOid": "b0bf7fd"
+          },
+          "author": "tanyanxia",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-09-30T08:03:35Z",
+          "updatedAt": "2026-09-30T08:06:46Z",
+          "comments": [
+            {
+              "originalPosition": 1,
+              "body": "```suggestion\n    org: China Unicom\n    country: China\n```",
+              "createdAt": "2026-09-30T08:03:35Z",
+              "updatedAt": "2026-09-30T08:06:46Z"
+            },
+            {
+              "originalPosition": 1,
+              "body": "```suggestion\n    org: Huawei Technologies\n    country: China\n```",
+              "createdAt": "2026-09-30T08:04:05Z",
+              "updatedAt": "2026-09-30T08:06:46Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
