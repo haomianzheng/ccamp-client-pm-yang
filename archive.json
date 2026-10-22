@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-01T02:52:58.139363+00:00",
+  "timestamp": "2026-10-22T02:15:24.865030+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -143,7 +143,7 @@
       "id": "I_kwDOKd2bN86eVtSb",
       "title": "Clean-up github repository",
       "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/8",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -154,9 +154,17 @@
       ],
       "body": "The tagged version -10 release is not aligned with the published draft on datatracker since it does not include the changes done the version -10 published on datatracker\r\n\r\nhttps://author-tools.ietf.org/iddiff?url1=draft-zheng-ccamp-client-pm-yang-09&url2=draft-zheng-ccamp-client-pm-yang-10&difftype=--html\r\n",
       "createdAt": "2024-11-13T19:02:33Z",
-      "updatedAt": "2024-11-13T19:02:33Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2026-10-21T13:19:06Z",
+      "closedAt": "2026-10-21T13:19:06Z",
+      "comments": [
+        {
+          "author": "italobusi",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The github is not aligned with the -16 version of the draft",
+          "createdAt": "2026-10-21T13:19:06Z",
+          "updatedAt": "2026-10-21T13:19:06Z"
+        }
+      ]
     },
     {
       "number": 9,
@@ -349,7 +357,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2026-09-30T07:25:37Z",
-      "updatedAt": "2026-09-30T08:58:16Z",
+      "updatedAt": "2026-10-21T13:16:45Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "4b01c1c205a73c2a005c36497b8b9556a923cec2",
@@ -368,7 +376,7 @@
             "abbreviatedOid": "b0bf7fd"
           },
           "author": "tanyanxia",
-          "authorAssociation": "NONE",
+          "authorAssociation": "COLLABORATOR",
           "state": "COMMENTED",
           "body": "",
           "createdAt": "2026-09-30T08:03:35Z",
@@ -387,6 +395,19 @@
               "updatedAt": "2026-09-30T08:06:46Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOKd2bN88AAAABTc17Uw",
+          "commit": {
+            "abbreviatedOid": "1ea28bf"
+          },
+          "author": "tanyanxia",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-10-21T13:16:45Z",
+          "updatedAt": "2026-10-21T13:16:45Z",
+          "comments": []
         }
       ]
     }
