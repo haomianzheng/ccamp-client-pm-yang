@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-10-22T02:15:24.865030+00:00",
+  "timestamp": "2026-11-01T02:57:37.605343+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -355,9 +355,9 @@
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
-      "body": "",
+      "body": "See: [diff with main](https://author-tools.ietf.org/api/iddiff?url_1=https://haomianzheng.github.io/ccamp-client-pm-yang/draft-zheng-ccamp-client-pm-yang.txt&url_2=https://italobusi.github.io/ccamp-client-pm-yang/clean-up/draft-zheng-ccamp-client-pm-yang.txt)",
       "createdAt": "2026-09-30T07:25:37Z",
-      "updatedAt": "2026-10-21T13:16:45Z",
+      "updatedAt": "2026-10-30T21:25:52Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "4b01c1c205a73c2a005c36497b8b9556a923cec2",
