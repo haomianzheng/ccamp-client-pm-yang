@@ -5,13 +5,13 @@
 CCAMP Working Group                                               Y. Tan
 Internet-Draft                                              China Unicom
 Intended status: Standards Track                                   X. Li
-Expires: 19 March 2027                                           I. Busi
+Expires: 8 May 2027                                              I. Busi
                                                      Huawei Technologies
                                                                 V. Lopez
                                                                    Nokia
                                                      O. Gonzalez de Dios
                                                               Telefonica
-                                                       15 September 2026
+                                                         4 November 2026
 
 
        A YANG Data Model for Client Signal Performance Monitoring
@@ -60,7 +60,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 March 2027.
+   This Internet-Draft will expire on 8 May 2027.
 
 Copyright Notice
 
@@ -99,6 +99,7 @@ Table of Contents
    12. References
      12.1.  Normative References
      12.2.  Informative References
+   Acknowledgments
    Contributors
    Authors' Addresses
 
@@ -465,8 +466,8 @@ Table of Contents
        "
          WG List: <mailto:ccamp@ietf.org>
          ID-draft editor:
-           Yanxia Tan (tanyx11@chinaunicom.cn)
-                   Xiao Li (lixiao33@huawei.com);
+           Yanxia Tan (tanyx11@chinaunicom.cn);
+           Xiao Li (lixiao33@huawei.com);
            Italo Busi (italo.busi@huawei.com);
            Victor Lopez (victor.lopez@nokia.com);
            Oscar Gonzalez de Dios(oscar.gonzalezdedios@telefonica.com);
@@ -474,23 +475,24 @@ Table of Contents
 
      description
        "This module defines the performance monitoring for Ethernet
-        services. The model fully conforms to the Network Management
-        Datastore Architecture (NMDA).
+        services.
+
+        Copyright (c) 2026 IETF Trust and the persons
+        identified as authors of the code.  All rights reserved.
 
         Copyright (c) 2021 IETF Trust and the persons
         identified as authors of the code.  All rights reserved.
-        Redistribution and use in source and binary forms, with or
-        without modification, is permitted pursuant to, and subject
-        to the license terms contained in, the Simplified BSD License
-        set forth in Section 4.c of the IETF Trust's Legal Provisions
-        Relating to IETF Documents
-        (https://trustee.ietf.org/license-info).
+
+        All revisions of IETF and IANA published modules can be found
+        at the YANG Parameters registry group
+        (https://www.iana.org/assignments/yang-parameters).
+
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.";
 
-     revision 2024-03-04 {
+     revision 2026-09-15 {
        description
-         "Initial version";
+         "Initial version.";
        reference
          "ADD REFERENCE HERE";
      }
@@ -868,8 +870,8 @@ Table of Contents
        "
          WG List: <mailto:ccamp@ietf.org>
          ID-draft editor:
-           Yanxia Tan (tanyx11@chinaunicom.cn)
-                   Xiao Li (lixiao33@huawei.com);
+           Yanxia Tan (tanyx11@chinaunicom.cn);
+           Xiao Li (lixiao33@huawei.com);
            Italo Busi (italo.busi@huawei.com);
            Victor Lopez (victor.lopez@nokia.com);
            Oscar Gonzalez de Dios(oscar.gonzalezdedios@telefonica.com);
@@ -877,23 +879,24 @@ Table of Contents
 
      description
        "This module defines the performance monitoring for Ethernet
-        services OAM. The model fully conforms to the Network Management
-        Datastore Architecture (NMDA).
+        services OAM.
+
+        Copyright (c) 2026 IETF Trust and the persons
+        identified as authors of the code.  All rights reserved.
 
         Copyright (c) 2021 IETF Trust and the persons
         identified as authors of the code.  All rights reserved.
-        Redistribution and use in source and binary forms, with or
-        without modification, is permitted pursuant to, and subject
-        to the license terms contained in, the Simplified BSD License
-        set forth in Section 4.c of the IETF Trust's Legal Provisions
-        Relating to IETF Documents
-        (https://trustee.ietf.org/license-info).
+
+        All revisions of IETF and IANA published modules can be found
+        at the YANG Parameters registry group
+        (https://www.iana.org/assignments/yang-parameters).
+
         This version of this YANG module is part of RFC XXXX; see
         the RFC itself for full legal notices.";
 
-     revision 2024-03-04 {
+     revision 2026-09-15 {
        description
-         "Initial version";
+         "Initial version.";
        reference
          "ADD REFERENCE HERE";
      }
@@ -1267,9 +1270,9 @@ Table of Contents
               Ceccarelli, "YANG models for Virtual Network (VN)/TE
               Performance Monitoring Telemetry and Scaling Intent
               Autonomics", Work in Progress, Internet-Draft, draft-ietf-
-              teas-actn-pm-telemetry-autonomics-18, 2 February 2026,
+              teas-actn-pm-telemetry-autonomics-19, 8 October 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              actn-pm-telemetry-autonomics-18>.
+              actn-pm-telemetry-autonomics-19>.
 
    [I-D.www-bess-yang-vpn-service-pm]
               Wu, Q., Boucadair, M., de Dios, O. G., Wen, B., Liu, C.,
@@ -1356,61 +1359,59 @@ Table of Contents
               Guo, A., Belotti, S., Galimberti, G., de Madrid, U. A.,
               and D. P. Burrero, "A YANG Data Model for WDM Tunnels",
               Work in Progress, Internet-Draft, draft-ietf-ccamp-wdm-
-              tunnel-yang-08, 22 April 2026,
+              tunnel-yang-09, 22 October 2026,
               <https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-
-              wdm-tunnel-yang-08>.
+              wdm-tunnel-yang-09>.
 
    [RFC8340]  Bjorklund, M. and L. Berger, Ed., "YANG Tree Diagrams",
               BCP 215, RFC 8340, DOI 10.17487/RFC8340, March 2018,
               <https://www.rfc-editor.org/rfc/rfc8340>.
 
+Acknowledgments
+
+   TODO acknowledge.
+
 Contributors
 
-   The following people contributed significantly to this document:
-
    Chaode Yu
-
    Huawei Technologies
-
    Email: yuchaode@huawei.com
 
+
    Haomian Zheng
-
    Huawei Technologies
-
    Email: zhenghaomian@huawei.com
 
+
    Yanlei Zheng
-
    China Unicom
-
    Email: zhengyanlei@chinaunicom.cn
+
 
 Authors' Addresses
 
    Yanxia Tan
    China Unicom
+   China
    Email: tanyx11@chinaunicom.cn
 
 
    Xiao Li
    Huawei Technologies
+   China
    Email: lixiao33@huawei.com
 
 
    Italo Busi
    Huawei Technologies
-   Italy
    Email: italo.busi@huawei.com
 
 
    Victor Lopez
    Nokia
-   Spain
    Email: victor.lopez@nokia.com
 
 
    Oscar Gonzalez de Dios
    Telefonica
-   Spain
    Email: oscar.gonzalezdedios@telefonica.com

@@ -14,22 +14,22 @@
        A transport network is a server-layer network to provide connectivity services to its client.  Given the client signal is configured, the followup function for performance monitoring, such as latency and bit error rate, would be needed for network operation. 
        This document describes the data model to support the performance monitoring functionalities. 
     " name="description">
-<meta content="xml2rfc 3.34.0" name="generator">
+<meta content="xml2rfc 3.35.0" name="generator">
 <meta content="draft-zheng-ccamp-client-pm-yang-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.34.0
-    Python 3.14.7
-    ConfigArgParse 1.7.5
+  xml2rfc 3.35.0
+    Python 3.14.10
+    ConfigArgParse 1.9.0
     google-i18n-address 3.1.1
     intervaltree 3.2.1
     Jinja2 3.1.6
     lxml 6.1.1
     natsort 8.4.0
-    platformdirs 4.11.7
+    platformdirs 4.14.3
     pycountry 24.6.1
     PyYAML 6.0.3
     requests 2.33.1
-    wcwidth 0.8.3
+    wcwidth 0.9.4
 -->
 <link href="draft-zheng-ccamp-client-pm-yang.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1045,11 +1045,11 @@ svg {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">PM YANG for Client Signal</td>
-<td class="right">September 2026</td>
+<td class="right">November 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Tan, et al.</td>
-<td class="center">Expires 19 March 2027</td>
+<td class="center">Expires 8 May 2027</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1062,12 +1062,12 @@ svg {
 <dd class="internet-draft">draft-zheng-ccamp-client-pm-yang-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2026-09-15" class="published">15 September 2026</time>
+<time datetime="2026-11-04" class="published">4 November 2026</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2027-03-19">19 March 2027</time></dd>
+<dd class="expires"><time datetime="2027-05-08">8 May 2027</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1134,7 +1134,7 @@ svg {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 March 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 May 2027.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1237,10 +1237,13 @@ svg {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-contributors" class="internal xref">Contributors</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
-            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.14.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-contributors" class="internal xref">Contributors</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
+            <p id="section-toc.1-1.15.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1595,8 +1598,8 @@ module ietf-service-pm {
     "
       WG List: &lt;mailto:ccamp@ietf.org&gt;
       ID-draft editor:
-        Yanxia Tan (tanyx11@chinaunicom.cn)
-                Xiao Li (lixiao33@huawei.com);
+        Yanxia Tan (tanyx11@chinaunicom.cn);
+        Xiao Li (lixiao33@huawei.com);
         Italo Busi (italo.busi@huawei.com);
         Victor Lopez (victor.lopez@nokia.com);
         Oscar Gonzalez de Dios(oscar.gonzalezdedios@telefonica.com);
@@ -1604,23 +1607,24 @@ module ietf-service-pm {
 
   description
     "This module defines the performance monitoring for Ethernet
-     services. The model fully conforms to the Network Management
-     Datastore Architecture (NMDA).
+     services.
+
+     Copyright (c) 2026 IETF Trust and the persons
+     identified as authors of the code.  All rights reserved.
 
      Copyright (c) 2021 IETF Trust and the persons
      identified as authors of the code.  All rights reserved.
-     Redistribution and use in source and binary forms, with or
-     without modification, is permitted pursuant to, and subject
-     to the license terms contained in, the Simplified BSD License
-     set forth in Section 4.c of the IETF Trust's Legal Provisions
-     Relating to IETF Documents
-     (https://trustee.ietf.org/license-info).
+
+     All revisions of IETF and IANA published modules can be found
+     at the YANG Parameters registry group
+     (https://www.iana.org/assignments/yang-parameters).
+
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
 
-  revision 2024-03-04 {
+  revision 2026-09-15 {
     description
-      "Initial version";
+      "Initial version.";
     reference
       "ADD REFERENCE HERE";
   }
@@ -2010,8 +2014,8 @@ module ietf-eth-service-oam {
     "
       WG List: &lt;mailto:ccamp@ietf.org&gt;
       ID-draft editor:
-        Yanxia Tan (tanyx11@chinaunicom.cn)
-                Xiao Li (lixiao33@huawei.com);
+        Yanxia Tan (tanyx11@chinaunicom.cn);
+        Xiao Li (lixiao33@huawei.com);
         Italo Busi (italo.busi@huawei.com);
         Victor Lopez (victor.lopez@nokia.com);
         Oscar Gonzalez de Dios(oscar.gonzalezdedios@telefonica.com);
@@ -2019,23 +2023,24 @@ module ietf-eth-service-oam {
 
   description
     "This module defines the performance monitoring for Ethernet
-     services OAM. The model fully conforms to the Network Management
-     Datastore Architecture (NMDA).
+     services OAM.
+
+     Copyright (c) 2026 IETF Trust and the persons
+     identified as authors of the code.  All rights reserved.
 
      Copyright (c) 2021 IETF Trust and the persons
      identified as authors of the code.  All rights reserved.
-     Redistribution and use in source and binary forms, with or
-     without modification, is permitted pursuant to, and subject
-     to the license terms contained in, the Simplified BSD License
-     set forth in Section 4.c of the IETF Trust's Legal Provisions
-     Relating to IETF Documents
-     (https://trustee.ietf.org/license-info).
+
+     All revisions of IETF and IANA published modules can be found
+     at the YANG Parameters registry group
+     (https://www.iana.org/assignments/yang-parameters).
+
      This version of this YANG module is part of RFC XXXX; see
      the RFC itself for full legal notices.";
 
-  revision 2024-03-04 {
+  revision 2026-09-15 {
     description
-      "Initial version";
+      "Initial version.";
     reference
       "ADD REFERENCE HERE";
   }
@@ -2424,7 +2429,7 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-actn-pm-telemetry-autonomics">[I-D.ietf-teas-actn-pm-telemetry-autonomics]</dt>
         <dd>
-<span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">King, D.</span>, <span class="refAuthor">Vilalta, R.</span>, <span class="refAuthor">Busi, I.</span>, and <span class="refAuthor">D. Ceccarelli</span>, <span class="refTitle">"YANG models for Virtual Network (VN)/TE Performance Monitoring Telemetry and Scaling Intent Autonomics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-actn-pm-telemetry-autonomics-18</span>, <time datetime="2026-02-02" class="refDate">2 February 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-pm-telemetry-autonomics-18">https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-pm-telemetry-autonomics-18</a>&gt;</span>. </dd>
+<span class="refAuthor">Dhody, D.</span>, <span class="refAuthor">King, D.</span>, <span class="refAuthor">Vilalta, R.</span>, <span class="refAuthor">Busi, I.</span>, and <span class="refAuthor">D. Ceccarelli</span>, <span class="refTitle">"YANG models for Virtual Network (VN)/TE Performance Monitoring Telemetry and Scaling Intent Autonomics"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-actn-pm-telemetry-autonomics-19</span>, <time datetime="2026-10-08" class="refDate">8 October 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-pm-telemetry-autonomics-19">https://datatracker.ietf.org/doc/html/draft-ietf-teas-actn-pm-telemetry-autonomics-19</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.www-bess-yang-vpn-service-pm">[I-D.www-bess-yang-vpn-service-pm]</dt>
         <dd>
@@ -2493,7 +2498,7 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <dd class="break"></dd>
 <dt id="I-D.ietf-ccamp-wdm-tunnel-yang">[I-D.ietf-ccamp-wdm-tunnel-yang]</dt>
         <dd>
-<span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Galimberti, G.</span>, <span class="refAuthor">de Madrid, U. A.</span>, and <span class="refAuthor">D. P. Burrero</span>, <span class="refTitle">"A YANG Data Model for WDM Tunnels"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-wdm-tunnel-yang-08</span>, <time datetime="2026-04-22" class="refDate">22 April 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-08">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-08</a>&gt;</span>. </dd>
+<span class="refAuthor">Guo, A.</span>, <span class="refAuthor">Belotti, S.</span>, <span class="refAuthor">Galimberti, G.</span>, <span class="refAuthor">de Madrid, U. A.</span>, and <span class="refAuthor">D. P. Burrero</span>, <span class="refTitle">"A YANG Data Model for WDM Tunnels"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-ccamp-wdm-tunnel-yang-09</span>, <time datetime="2026-10-22" class="refDate">22 October 2026</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-09">https://datatracker.ietf.org/doc/html/draft-ietf-ccamp-wdm-tunnel-yang-09</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8340">[RFC8340]</dt>
       <dd>
@@ -2504,31 +2509,54 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 </div>
 </section>
 </div>
-<div id="contributors">
+<div id="acknowledgments">
 <section id="appendix-A">
+      <h2 id="name-acknowledgments">
+<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="contributors">
+<section id="appendix-B">
       <h2 id="name-contributors">
 <a href="#name-contributors" class="section-name selfRef">Contributors</a>
       </h2>
-<p id="appendix-A-1">The following people contributed significantly to this document:<a href="#appendix-A-1" class="pilcrow">¶</a></p>
-<p id="appendix-A-2">Chaode Yu<a href="#appendix-A-2" class="pilcrow">¶</a></p>
-<p id="appendix-A-3">Huawei Technologies<a href="#appendix-A-3" class="pilcrow">¶</a></p>
-<p id="appendix-A-4">Email: yuchaode@huawei.com<a href="#appendix-A-4" class="pilcrow">¶</a></p>
-<p id="appendix-A-5">Haomian Zheng<a href="#appendix-A-5" class="pilcrow">¶</a></p>
-<p id="appendix-A-6">Huawei Technologies<a href="#appendix-A-6" class="pilcrow">¶</a></p>
-<p id="appendix-A-7">Email: zhenghaomian@huawei.com<a href="#appendix-A-7" class="pilcrow">¶</a></p>
-<p id="appendix-A-8">Yanlei Zheng<a href="#appendix-A-8" class="pilcrow">¶</a></p>
-<p id="appendix-A-9">China Unicom<a href="#appendix-A-9" class="pilcrow">¶</a></p>
-<p id="appendix-A-10">Email: zhengyanlei@chinaunicom.cn<a href="#appendix-A-10" class="pilcrow">¶</a></p>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Chaode Yu</span></div>
+<div dir="auto" class="left"><span class="org">Huawei Technologies</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:yuchaode@huawei.com" class="email">yuchaode@huawei.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Haomian Zheng</span></div>
+<div dir="auto" class="left"><span class="org">Huawei Technologies</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:zhenghaomian@huawei.com" class="email">zhenghaomian@huawei.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Yanlei Zheng</span></div>
+<div dir="auto" class="left"><span class="org">China Unicom</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:zhengyanlei@chinaunicom.cn" class="email">zhengyanlei@chinaunicom.cn</a>
+</div>
+</address>
 </section>
 </div>
 <div id="authors-addresses">
-<section id="appendix-B">
+<section id="appendix-C">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Yanxia Tan</span></div>
 <div dir="auto" class="left"><span class="org">China Unicom</span></div>
+<div dir="auto" class="left"><span class="country-name">China</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:tanyx11@chinaunicom.cn" class="email">tanyx11@chinaunicom.cn</a>
@@ -2537,6 +2565,7 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Xiao Li</span></div>
 <div dir="auto" class="left"><span class="org">Huawei Technologies</span></div>
+<div dir="auto" class="left"><span class="country-name">China</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:lixiao33@huawei.com" class="email">lixiao33@huawei.com</a>
@@ -2545,7 +2574,6 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Italo Busi</span></div>
 <div dir="auto" class="left"><span class="org">Huawei Technologies</span></div>
-<div dir="auto" class="left"><span class="country-name">Italy</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:italo.busi@huawei.com" class="email">italo.busi@huawei.com</a>
@@ -2554,7 +2582,6 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Victor Lopez</span></div>
 <div dir="auto" class="left"><span class="org">Nokia</span></div>
-<div dir="auto" class="left"><span class="country-name">Spain</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:victor.lopez@nokia.com" class="email">victor.lopez@nokia.com</a>
@@ -2563,7 +2590,6 @@ protocol <span>[<a href="#RFC6241" class="cite xref">RFC6241</a>]</span>.<a href
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Oscar Gonzalez de Dios</span></div>
 <div dir="auto" class="left"><span class="org">Telefonica</span></div>
-<div dir="auto" class="left"><span class="country-name">Spain</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:oscar.gonzalezdedios@telefonica.com" class="email">oscar.gonzalezdedios@telefonica.com</a>
