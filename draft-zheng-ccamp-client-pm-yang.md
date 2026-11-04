@@ -23,29 +23,40 @@ author:
   -
     name: Yanxia Tan
     org: China Unicom
+    country: China
     email: tanyx11@chinaunicom.cn
   -
     name: Xiao Li
     org: Huawei Technologies
+    country: China
     email: lixiao33@huawei.com
   -
     name: Italo Busi
     org: Huawei Technologies
-    country: Italy
     email: italo.busi@huawei.com
   -
     name: Victor Lopez
     org: Nokia
-    country: Spain
     email: victor.lopez@nokia.com
   -
     name: Oscar Gonzalez de Dios
     ins: O. Gonzalez de Dios
     org: Telefonica
-    country: Spain
     email: oscar.gonzalezdedios@telefonica.com
 
-#contributor:
+contributor:
+  -
+    name: Chaode Yu
+    org: Huawei Technologies
+    email: yuchaode@huawei.com
+  -
+    name: Haomian Zheng
+    org: Huawei Technologies
+    email: zhenghaomian@huawei.com
+  -
+    name: Yanlei Zheng
+    org: China Unicom
+    email: zhengyanlei@chinaunicom.cn
 
 normative:
   ITU-T_G.709:
@@ -290,27 +301,7 @@ protocol {{!RFC6241}}.
 
 --- back
 
-# Contributors
+# Acknowledgments
 {:numbered="false"}
 
-The following people contributed significantly to this document:
-
-Chaode Yu
-
-Huawei Technologies
-
-Email: yuchaode@huawei.com
-
-
-Haomian Zheng
-
-Huawei Technologies
-
-Email: zhenghaomian@huawei.com
-
-
-Yanlei Zheng
-
-China Unicom
-
-Email: zhengyanlei@chinaunicom.cn
+TODO acknowledge.
