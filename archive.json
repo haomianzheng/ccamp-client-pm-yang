@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-11-01T02:57:37.605343+00:00",
+  "timestamp": "2026-11-05T04:00:25.352879+00:00",
   "repo": "haomianzheng/ccamp-client-pm-yang",
   "labels": [
     {
@@ -245,6 +245,24 @@
       "updatedAt": "2026-07-21T10:51:22Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOKd2bN88AAAABcYDmxw",
+      "title": "Align draft and YANG model with RFC9907 guidelines",
+      "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/issues/14",
+      "state": "OPEN",
+      "author": "italobusi",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "italobusi"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-11-04T08:27:26Z",
+      "updatedAt": "2026-11-04T08:27:30Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -350,24 +368,26 @@
       "id": "PR_kwDOKd2bN88AAAABF2K_eA",
       "title": "Clean-up changes done in the -16 update",
       "url": "https://github.com/haomianzheng/ccamp-client-pm-yang/pull/13",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "italobusi",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "See: [diff with main](https://author-tools.ietf.org/api/iddiff?url_1=https://haomianzheng.github.io/ccamp-client-pm-yang/draft-zheng-ccamp-client-pm-yang.txt&url_2=https://italobusi.github.io/ccamp-client-pm-yang/clean-up/draft-zheng-ccamp-client-pm-yang.txt)",
       "createdAt": "2026-09-30T07:25:37Z",
-      "updatedAt": "2026-10-30T21:25:52Z",
+      "updatedAt": "2026-11-04T08:26:25Z",
       "baseRepository": "haomianzheng/ccamp-client-pm-yang",
       "baseRefName": "main",
       "baseRefOid": "4b01c1c205a73c2a005c36497b8b9556a923cec2",
       "headRepository": "italobusi/ccamp-client-pm-yang",
       "headRefName": "clean-up",
       "headRefOid": "1ea28bf62317f972006de0e5445254771cc76caf",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2026-11-04T08:26:25Z",
+      "mergedAt": "2026-11-04T08:26:25Z",
+      "mergedBy": "italobusi",
+      "mergeCommit": {
+        "oid": "a6678d8c6cbfa5b34fb18ab029f3785e90097571"
+      },
       "comments": [],
       "reviews": [
         {
@@ -407,6 +427,19 @@
           "body": "",
           "createdAt": "2026-10-21T13:16:45Z",
           "updatedAt": "2026-10-21T13:16:45Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOKd2bN88AAAABV6E7aQ",
+          "commit": {
+            "abbreviatedOid": "1ea28bf"
+          },
+          "author": "xiao777666",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-11-04T07:59:41Z",
+          "updatedAt": "2026-11-04T07:59:41Z",
           "comments": []
         }
       ]
